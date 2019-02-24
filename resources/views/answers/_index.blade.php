@@ -15,7 +15,7 @@
                                 </a>
                                 <span class="votes-count">1230</span>
                                 <a title="This answer is not useful" class="vote-down off"><i class="fas fa-caret-down fa-3x"></i></a>
-                                <a title="Mark this answer as best answer" class="vote-accepted mt-2 favorited"><i class="fas fa-check fa-2x"></i></a>
+                                <a title="Mark this answer as best answer" class="{{$answer->status}} mt-2 favorited"><i class="fas fa-check fa-2x"></i></a>
                                 <span class="favorites-count">123</span>
                             </div>
                             <div class="media-body">
