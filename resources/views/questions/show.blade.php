@@ -28,7 +28,7 @@
                         <span class="votes-count">{{$question->votes_count}}</span>
                         <a title="This question is not useful" class="vote-down {{ Auth::guest() ? 'off' : ''}}" onclick="event.preventDefault(); document.getElementById('down-vote-question-{{$question->id}}').submit();"><i class="fas fa-caret-down fa-3x"></i></a>
 
-                        <form id="up-vote-question-{{$question->id}}" action="/questions/{{ $question->id }}/vote" method="POST" style="display:none;">
+                        <form id="down-vote-question-{{$question->id}}" action="/questions/{{ $question->id }}/vote" method="POST" style="display:none;">
                             @csrf
 
                             <input type="hidden" name="vote" value="-1">
