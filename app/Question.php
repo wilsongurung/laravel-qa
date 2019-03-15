@@ -18,6 +18,10 @@ class Question extends Model
         $this->attributes['title'] = $value;
         $this->attributes['slug'] = str_slug($value);
     }
+    /*
+    public function setBodyAttribute($value) {
+        $this->attributes['body'] = clean($value);
+    } */
 
     public function getUrlAttribute(){
         return route("questions.show", $this->slug);
@@ -40,7 +44,7 @@ class Question extends Model
     }
 
     public function getBodyHtmlAttribute() {
-        return \Parsedown::instance()->text($this->body);
+        return clean($this->bodyHTML());
     }
 
     public function answers() {
@@ -68,6 +72,18 @@ class Question extends Model
     public function getFavoritesCountAttribute(){
         return $this->favorites()->count();
 
+    }
+
+    public function getExcerptAttribute() {
+       return $this->excerpt(250);
+    }
+
+    public function excerpt($length) {
+        return str_limit(strip_tags($this->bodyHTML()), $length);
+    }
+
+    public function bodyHTML() {
+        return \Parsedown::instance()->text($this->body);
     }
 
     
