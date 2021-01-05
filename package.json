@@ -14,7 +14,7 @@
         "@fortawesome/fontawesome-free": "^5.7.2",
         "@fortawesome/fontawesome-free-solid": "^5.0.13",
         "@fortawesome/free-solid-svg-icons": "^5.7.2",
-        "axios": "^0.18",
+        "axios": "^0.21",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
         "i": "^0.3.6",
